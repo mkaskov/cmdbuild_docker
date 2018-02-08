@@ -1,0 +1,19 @@
+version : '2'
+
+services:
+ tomcat:
+  image: cmdbuild_max:latest
+  ports:
+   - 8080:8080
+  restart: always 
+
+
+ pgsql:
+  image: postgres:9.3
+  restart: always
+  environment:
+   - POSTGRES_PASSWORD=YOUR_POSTGRES_PASSWORD
+  ports:
+   - 55432:5432
+
+
