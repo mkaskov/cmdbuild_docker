@@ -1,6 +1,15 @@
 # CMDBuild docker
 docker cmdbuild 2.5 with shark
 
+
+clone repository
+
+``` bash
+git clone https://github.com/mkaskov/cmdbuild_docker.git
+cd cmdbuild_docker
+
+```
+
 Inside a project directory:
 
 ``` bash
