@@ -86,3 +86,15 @@ Delete all images
 ``` bash
 docker rmi $(docker images -q)
 ```
+
+## Database commands
+
+Backup
+``` bash
+docker exec  -u postgres your-db-container pg_dumpall -c > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+```
+
+Restore
+``` bash
+cat your_dump.sql | docker exec -i your-db-container psql -U postgres
+```
