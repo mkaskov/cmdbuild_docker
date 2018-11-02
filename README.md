@@ -49,52 +49,8 @@ docker run --name pgadmin4 --net=network1 -p 5050:5050 -d thajeztah/pgadmin4
 
 After that you can open pgAdmin4 http://localhost:5050
 
+## Wiki
 
-## Docker commands
+[autostart containers with systemd](https://github.com/mkaskov/cmdbuild_docker/wiki/autostart-containers-with-systemd)  
+[Docker & DB commands](https://github.com/mkaskov/cmdbuild_docker/wiki/Docker-&-DB-commands)  
 
-Start selected container
-``` bash
-docker start <container_name>
-```
-
-Stop selected container
-``` bash
-docker stop <container_name>
-```
-
-Restart selected container
-``` bash
-docker restart <container_name>
-```
-
-Get information about container
-``` bash
-docker inspect <container_name>
-```
-
-Stop all containers
-``` bash
-docker stop $(docker ps)
-```
-
-Delete all containers
-``` bash
-docker rm $(docker ps -a -q)
-```
-
-Delete all images
-``` bash
-docker rmi $(docker images -q)
-```
-
-## Database commands
-
-Backup
-``` bash
-docker exec  -u postgres your-db-container pg_dumpall -c > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
-```
-
-Restore
-``` bash
-cat your_dump.sql | docker exec -i your-db-container psql -U postgres
-```
